@@ -1,0 +1,13 @@
+# --- Données et modèles régénérables (téléchargés / produits par les notebooks) ---
+data/
+models/
+
+# --- Caches Python / Jupyter ---
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# --- Système / éditeur ---
+.vscode/
+.DS_Store
+Thumbs.db
