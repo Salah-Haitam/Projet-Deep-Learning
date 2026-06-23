@@ -48,11 +48,6 @@ Projet-Deep-Learning/
 │
 ├── figures/                               ← figures (PNG) utilisées par le rapport
 │
-├── _build/                                ← scripts générateurs des notebooks (outil, optionnel)
-│   ├── gen_part1.py … gen_part4.py        ← génèrent les notebooks
-│   ├── extract_figs.py                    ← extrait les figures des notebooks
-│   └── convert_pdf.py                     ← convertit le rapport .md en .pdf
-│
 ├── .gitignore                             ← exclut les caches régénérables (data/, models/…)
 └── .gitattributes                         ← règles Git LFS pour les fichiers lourds
 ```
@@ -81,13 +76,7 @@ jupyter nbconvert --to notebook --execute --inplace Notebook/Partie1_MLP_WineQua
 ```
 
 Les parties sont **indépendantes** et peuvent être lancées dans n'importe quel ordre. Durées
-indicatives sur **CPU** : Partie I ≈ 25 s · Partie II ≈ 4 min (télécharge CIFAR-10) · Partie III ≈ 5 min.
-
-**Régénérer le rapport PDF** (après modification du `.md`) :
-
-```bash
-python _build/convert_pdf.py
-```
+indicatives sur **CPU** : Partie I ≈ 2 min · Partie II ≈ 8 min (télécharge CIFAR-10) · Partie III ≈ 3 min.
 
 ---
 
@@ -115,7 +104,7 @@ automatiquement gérés par LFS. Activation : `git lfs install` (une fois sur la
 | Exigé | Fourni |
 |-------|--------|
 | Rapport scientifique structuré | `Rapport_Projet_Deep_Learning.docx` / `.pdf` / `.md` (intro, objectifs, méthodologie, implémentation, résultats, interprétation, limites, conclusion + justification des choix) |
-| Code source complet et commenté | les 4 notebooks `.ipynb` (+ générateurs `_build/`) |
+| Code source complet et commenté | les 4 notebooks `.ipynb` (auto-contenus et commentés) |
 | Notebook/script principal exécutable | les 4 notebooks `.ipynb` |
 | Documentation / synthèse | `README.md`, `Notebook/Partie4_Synthese_Transversale.ipynb` |
 | Annexe expérimentale (courbes, tableaux, métriques, visualisations) | `figures/` + tableaux dans le rapport et les notebooks |
