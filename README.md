@@ -32,30 +32,26 @@ par une dataclass `CONFIG` en tête de notebook.
 ## 2. Structure du dépôt
 
 ```
-projet-fin-de-module-deep-learning/
+Projet-Deep-Learning/
 │
 ├── README.md                              ← ce fichier (présentation + guide)
 │
-├── Partie1_MLP_WineQuality.ipynb          ← Partie I  : MLP / données tabulaires
-├── Partie2_CNN_CIFAR10.ipynb              ← Partie II : CNN / images
-├── Partie3_RNN_Seq2Seq_FraEng.ipynb       ← Partie III: RNN-LSTM-GRU-Seq2Seq / texte
-├── Partie4_Synthese_Transversale.ipynb    ← Synthèse transversale finale (markdown)
+├── Notebook/                              ← les 4 notebooks Jupyter (code source exécutable)
+│   ├── Partie1_MLP_WineQuality.ipynb       ← Partie I  : MLP / données tabulaires
+│   ├── Partie2_CNN_CIFAR10.ipynb           ← Partie II : CNN / images
+│   ├── Partie3_RNN_Seq2Seq_FraEng.ipynb    ← Partie III: RNN-LSTM-GRU-Seq2Seq / texte
+│   └── Partie4_Synthese_Transversale.ipynb ← Synthèse transversale finale (markdown)
 │
 ├── Rapport_Projet_Deep_Learning.docx      ← Rapport scientifique (Word, version la plus complète)
 ├── Rapport_Projet_Deep_Learning.pdf       ← Rapport scientifique (PDF)
 ├── Rapport_Projet_Deep_Learning.md        ← Rapport scientifique (source Markdown)
-├── abreviation.docx                       ← Liste des abréviations, sigles et symboles
 │
 ├── figures/                               ← figures (PNG) utilisées par le rapport
 │
 ├── _build/                                ← scripts générateurs des notebooks (outil, optionnel)
-│   ├── gen_part1.py … gen_part4.py
+│   ├── gen_part1.py … gen_part4.py        ← génèrent les notebooks
 │   ├── extract_figs.py                    ← extrait les figures des notebooks
 │   └── convert_pdf.py                     ← convertit le rapport .md en .pdf
-│
-├── Projet_Deep-Learning_EMSI.pdf          ← sujet (fourni)
-├── fiche_synthese_MLP_PyTorch.pdf         ← fiche de synthèse (fournie)
-├── synthese_rnn_seq2seq.pdf               ← fiche de synthèse (fournie)
 │
 ├── .gitignore                             ← exclut les caches régénérables (data/, models/…)
 └── .gitattributes                         ← règles Git LFS pour les fichiers lourds
@@ -81,7 +77,7 @@ models/    ← checkpoints sauvegardés (state_dict : mlp_wine_best.pt, cnn_cifa
 **En ligne de commande** (exécute un notebook entier et enregistre les sorties) :
 
 ```bash
-jupyter nbconvert --to notebook --execute --inplace Partie1_MLP_WineQuality.ipynb
+jupyter nbconvert --to notebook --execute --inplace Notebook/Partie1_MLP_WineQuality.ipynb
 ```
 
 Les parties sont **indépendantes** et peuvent être lancées dans n'importe quel ordre. Durées
@@ -121,7 +117,7 @@ automatiquement gérés par LFS. Activation : `git lfs install` (une fois sur la
 | Rapport scientifique structuré | `Rapport_Projet_Deep_Learning.docx` / `.pdf` / `.md` (intro, objectifs, méthodologie, implémentation, résultats, interprétation, limites, conclusion + justification des choix) |
 | Code source complet et commenté | les 4 notebooks `.ipynb` (+ générateurs `_build/`) |
 | Notebook/script principal exécutable | les 4 notebooks `.ipynb` |
-| Documentation / synthèse | `README.md`, `Partie4_Synthese_Transversale.ipynb`, `abreviation.docx` |
+| Documentation / synthèse | `README.md`, `Notebook/Partie4_Synthese_Transversale.ipynb` |
 | Annexe expérimentale (courbes, tableaux, métriques, visualisations) | `figures/` + tableaux dans le rapport et les notebooks |
 
 **Modèles exigés et fournis** : MLP (2 versions `Sequential` + classe), CNN type LeNet, RNN, LSTM, GRU,
